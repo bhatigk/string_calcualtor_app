@@ -7,5 +7,9 @@ require_relative 'string_calculator'
 RSpec.describe StringCalculator do
   # Describe the add method
   describe ".add" do
+    # Test case: returns 0 for an empty string
+    it "returns 0 for an empty string" do
+      expect(StringCalculator.add("")).to eq(0)
+    end
   end
 end
