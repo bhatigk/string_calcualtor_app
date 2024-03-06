@@ -14,8 +14,7 @@ class StringCalculator
     end
 
     # Split the input string into an array of numbers based on the delimiter or newline character
-    computed_numbers = numbers.split("#{delimiter}").map { |number| number.include?("\n") ? number.split("\n") : number }
     # Convert each element of the array to an integer and sum them up
-    computed_numbers.flatten.map(&:to_i).sum
+    numbers.split(/#{delimiter}|\n/).map(&:to_i).sum
   end
 end
