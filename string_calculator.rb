@@ -1,6 +1,9 @@
 class StringCalculator
   # define class method add to implement the string calculator logic which takes an string input
   def self.add(numbers)
+    # Check if the input string contains negative numbers and raise an exception if it does
+    raise "negative numbers not allowed: #{numbers.scan(/-\d+/).join(', ')}" if numbers.include?('-')
+
     # Default delimiter is set to comma
     delimiter = ','
 
